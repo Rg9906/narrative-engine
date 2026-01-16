@@ -1,0 +1,170 @@
+1. The Problem
+
+Existing chat-based AI tools fail at long-form fiction writing.
+
+They:
+
+Forget earlier chapters or misremember details
+
+Contradict established character traits and plot logic
+
+Require constant manual re-feeding of context
+
+Treat writing as isolated prompts instead of a continuous narrative
+
+For a novel-length project (~100k words), this makes them unreliable as serious critique or continuity tools.
+
+The core issue is not intelligence — it is memory architecture.
+
+2. Why Chat-Based AI Fails for Long-Form Writing
+
+Chat-based systems are optimized for:
+
+Short-term conversation
+
+Session-limited memory
+
+Prompt-local reasoning
+
+They are not designed to:
+
+Persistently remember an evolving narrative
+
+Track character arcs across dozens of chapters
+
+Maintain internal story logic over months of writing
+
+Reason about contradictions introduced far apart in time
+
+Increasing context length alone does not solve this.
+What’s needed is structured, retrievable memory.
+
+3. What This Project Is
+
+This project is a Narrative Memory & Critique Engine.
+
+It is:
+
+A reader and analyst, not a writer
+
+A system that remembers the book permanently
+
+A tool that critiques new chapters using relevant past context
+
+A learning-first engineering project focused on system design
+
+LLMs are used for analysis, not as the source of memory.
+
+4. Scope-1: What the System Will Do
+
+Scope-1 is deliberately minimal and foundational.
+
+It will:
+
+Store chapters persistently
+
+Chapters saved as files (with metadata)
+
+Memory persists across sessions
+
+Generate and store summaries
+
+AI-generated summaries per chapter
+
+Used for fast retrieval and context selection
+
+Chunk and index text
+
+Chapters broken into logical chunks
+
+Enables selective retrieval instead of full-context dumps
+
+Retrieve relevant past context
+
+Based on the current chapter being critiqued
+
+Only relevant summaries/chunks are injected into the prompt
+
+Critique a new chapter
+
+Focus on:
+
+Character consistency
+
+Plot logic
+
+Tone and thematic alignment
+
+Potential contradictions
+
+Output is analytical feedback, not rewritten prose
+
+Scope-1 ends when:
+
+A new chapter can be critiqued using selectively retrieved past narrative memory.
+
+5. What Scope-1 Explicitly Will NOT Do
+
+To prevent overengineering, Scope-1 will not include:
+
+Character databases or profiles
+
+Timeline visualizations
+
+Worldbuilding graphs
+
+Embeddings optimization
+
+Vector databases (files first)
+
+UI / web interface
+
+Automatic rewriting or content generation
+
+Advanced literary theory analysis
+
+All of the above are future scopes, not current goals.
+
+6. Design Philosophy
+
+Incremental over perfect
+
+Files before databases
+
+Clarity over cleverness
+
+Memory before intelligence
+
+Learning while building
+
+If a feature does not directly support retrieval + critique, it does not belong in Scope-1.
+
+7. Success Criteria for Scope-1
+
+Scope-1 is successful if:
+
+The system remembers earlier chapters without re-prompting
+
+Critiques reference past events accurately
+
+Contradictions are detected more often than missed
+
+The architecture is understandable and extendable
+
+Performance, UI, and polish are secondary.
+
+8. Long-Term Direction (Non-Binding)
+
+Future scopes may add:
+
+Character arc tracking
+
+Timeline consistency checks
+
+Theme evolution analysis
+
+Lightweight UI
+
+Better retrieval strategies
+
+These are explicitly out of scope for now.
