@@ -1,0 +1,33 @@
+{
+  "name": "Bull",
+  "first_appearance": "chapter_0002",
+  "core_traits": [],
+  "established_facts": [],
+  "observed_behaviors": [
+    {
+      "chapter": "chapter_0002",
+      "behavior": "The tense atmosphere shifts when Detective Inspector, nicknamed the Bull, storms into the room, furious about a murder case that seems to be inadequately handled"
+    },
+    {
+      "chapter": "chapter_0002",
+      "behavior": "The Bull assigns Jamie to monitor the private detective while instructing Dom to locate Rhodes and gather information from neighbors"
+    },
+    {
+      "chapter": "chapter_0002",
+      "behavior": "The tense atmosphere shifts when Detective Inspector, nicknamed the Bull, storms into the room, furious about a murder case that seems to be inadequately handled"
+    },
+    {
+      "chapter": "chapter_0002",
+      "behavior": "The tense atmosphere shifts when Detective Inspector, nicknamed the Bull, storms into the room, furious about a murder case that seems to be inadequately handled"
+    },
+    {
+      "chapter": "chapter_0002",
+      "behavior": "The tense atmosphere shifts when Detective Inspector, nicknamed the Bull, storms into the room, furious about a murder case that seems to be inadequately handled"
+    }
+  ],
+  "relationships": {},
+  "open_questions": [
+    "The Bull questions Jamie and his partner Dom about the absence of Sergeant Rhodes, who has not reported in for several hours amidst the ongoing investigation"
+  ],
+  "last_updated": "chapter_0002"
+}

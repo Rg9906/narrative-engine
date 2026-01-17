@@ -2,14 +2,81 @@
   "name": "Giselle",
   "first_appearance": "chapter_01",
   "core_traits": [],
-  "established_facts": [],
+  "established_facts": [
+    "In the prologue of the narrative, Giselle, an artist who is deaf, paints in her small room while a feast prepares outside",
+    "In the prologue of the narrative, Giselle, an artist who is deaf, paints in her small room while a feast prepares outside"
+  ],
   "observed_behaviors": [
     {
       "chapter": "chapter_01",
       "behavior": "Appears in chapter summary"
+    },
+    {
+      "chapter": "chapter_0001",
+      "behavior": "Despite the perceived mistake, Giselle reassures herself that it can be corrected, signifying her desire to hide the truth beneath layers of paint, reflecting the themes of concealment and emotional complexity prevalent in her world."
+    },
+    {
+      "chapter": "chapter_0001",
+      "behavior": "She perceives the world through color instead of sound, interpreting the dynamics of her surroundings through vibrant hues that represent the emotions and personalities of those she observes"
+    },
+    {
+      "chapter": "chapter_0001",
+      "behavior": "As she paints, she captures the essence of her family and acquaintances: her lively siblings, Laurie’s grounding presence, Sebastian’s muted resignation, Lucius’s haunting grief, Talia’s vibrant life force, and Marlene’s comforting calmness"
+    },
+    {
+      "chapter": "chapter_0001",
+      "behavior": "However, as she begins to depict Mr"
+    },
+    {
+      "chapter": "chapter_0001",
+      "behavior": "Whitmore's angry silhouette, a vivid streak of red unexpectedly appears on her canvas, symbolizing something disruptive or harmful"
+    },
+    {
+      "chapter": "chapter_0001",
+      "behavior": "Despite the perceived mistake, Giselle reassures herself that it can be corrected, signifying her desire to hide the truth beneath layers of paint, reflecting the themes of concealment and emotional complexity prevalent in her world."
+    },
+    {
+      "chapter": "chapter_0001",
+      "behavior": "She perceives the world through color instead of sound, interpreting the dynamics of her surroundings through vibrant hues that represent the emotions and personalities of those she observes"
+    },
+    {
+      "chapter": "chapter_0001",
+      "behavior": "As she paints, she captures the essence of her family and acquaintances: her lively siblings, Laurie’s grounding presence, Sebastian’s muted resignation, Lucius’s haunting grief, Talia’s vibrant life force, and Marlene’s comforting calmness"
+    },
+    {
+      "chapter": "chapter_0001",
+      "behavior": "However, as she begins to depict Mr"
+    },
+    {
+      "chapter": "chapter_0001",
+      "behavior": "Whitmore's angry silhouette, a vivid streak of red unexpectedly appears on her canvas, symbolizing something disruptive or harmful"
+    },
+    {
+      "chapter": "chapter_0001",
+      "behavior": "Despite the perceived mistake, Giselle reassures herself that it can be corrected, signifying her desire to hide the truth beneath layers of paint, reflecting the themes of concealment and emotional complexity prevalent in her world."
+    },
+    {
+      "chapter": "chapter_0001",
+      "behavior": "She perceives the world through color instead of sound, interpreting the dynamics of her surroundings through vibrant hues that represent the emotions and personalities of those she observes"
+    },
+    {
+      "chapter": "chapter_0001",
+      "behavior": "As she paints, she captures the essence of her family and acquaintances: her lively siblings, Laurie’s grounding presence, Sebastian’s muted resignation, Lucius’s haunting grief, Talia’s vibrant life force, and Marlene’s comforting calmness"
+    },
+    {
+      "chapter": "chapter_0001",
+      "behavior": "However, as she begins to depict Mr"
+    },
+    {
+      "chapter": "chapter_0001",
+      "behavior": "Whitmore's angry silhouette, a vivid streak of red unexpectedly appears on her canvas, symbolizing something disruptive or harmful"
+    },
+    {
+      "chapter": "chapter_0001",
+      "behavior": "Despite the perceived mistake, Giselle reassures herself that it can be corrected, signifying her desire to hide the truth beneath layers of paint, reflecting the themes of concealment and emotional complexity prevalent in her world."
     }
   ],
   "relationships": {},
   "open_questions": [],
-  "last_updated": "chapter_01"
+  "last_updated": "chapter_0001"
 }

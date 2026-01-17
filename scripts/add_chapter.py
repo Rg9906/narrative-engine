@@ -11,10 +11,6 @@ def ensure_chapters_dir():
 
 
 def get_next_chapter_number():
-    """
-    Scans existing chapter files and returns the next chapter number as int.
-    Supports both old (chapter_1.txt) and new (chapter_0001.txt) formats.
-    """
     max_number = 0
 
     if not os.path.exists(CHAPTERS_DIR):
@@ -30,17 +26,32 @@ def get_next_chapter_number():
 
 
 def format_chapter_id(number: int) -> str:
-    """
-    Formats chapter number into fixed-width ID.
-    Example: 1 -> chapter_0001
-    """
     return f"chapter_{number:04d}"
 
 
 def main():
-    print("=== Add New Chapter ===")
+    print("=== Add / Insert Chapter ===")
 
-    print("Enter chapter text (type END on a new line to finish):")
+    ensure_chapters_dir()
+
+    next_number = get_next_chapter_number()
+    print(f"Next available chapter number: {next_number}")
+
+    raw = input(
+        "Enter chapter number (press Enter to use next): "
+    ).strip()
+
+    if raw == "":
+        chapter_number = next_number
+    else:
+        if not raw.isdigit():
+            print("❌ Invalid chapter number.")
+            return
+        chapter_number = int(raw)
+
+    chapter_id = format_chapter_id(chapter_number)
+
+    print("\nEnter chapter text (type END on a new line to finish):")
     lines = []
     while True:
         line = input()
@@ -50,13 +61,16 @@ def main():
 
     chapter_text = "\n".join(lines)
 
-    ensure_chapters_dir()
-
-    chapter_number = get_next_chapter_number()
-    chapter_id = format_chapter_id(chapter_number)
-
     filename = f"{chapter_id}.txt"
     filepath = os.path.join(CHAPTERS_DIR, filename)
+
+    if os.path.exists(filepath):
+        confirm = input(
+            f"\n⚠️ {filename} exists. Overwrite? (y/n): "
+        ).strip().lower()
+        if confirm != "y":
+            print("❌ Operation cancelled.")
+            return
 
     with open(filepath, "w", encoding="utf-8") as f:
         f.write(f"{chapter_id.replace('_', ' ').title()}\n")

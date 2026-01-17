@@ -2,14 +2,45 @@
   "name": "Whitmore",
   "first_appearance": "chapter_01",
   "core_traits": [],
-  "established_facts": [],
+  "established_facts": [
+    "The manor's luxurious details and chaotic atmosphere reflect the complexities of its inhabitants, including Edmund Whitmore, his wife, their son who is a well-regarded doctor, and their extended family",
+    "As Jamie contemplates the contrast between his life and the Whitmores', he meets a detective named Sirius Wolfe, who is there to investigate a crime scene in Edmund's messy study"
+  ],
   "observed_behaviors": [
     {
       "chapter": "chapter_01",
       "behavior": "Appears in chapter summary"
+    },
+    {
+      "chapter": "chapter_0001",
+      "behavior": "Whitmore's angry silhouette, a vivid streak of red unexpectedly appears on her canvas, symbolizing something disruptive or harmful"
+    },
+    {
+      "chapter": "chapter_0002",
+      "behavior": "In Chapter 0002, Jamie, a detective constable, reflects on his routine as he spreads peanut butter, contemplating the suicide of Whitmore, a colleague"
+    },
+    {
+      "chapter": "chapter_0002",
+      "behavior": "Tensions rise as they deal with the complexities surrounding Whitmore's death, including broken windows and the potential involvement of a private detective called in by the victim's family"
+    },
+    {
+      "chapter": "chapter_0004",
+      "behavior": "In Chapter 0004, Jamie explores the grand Victorian manor belonging to the Whitmore family, feeling dwarfed by its size and opulence compared to his own modest home"
+    },
+    {
+      "chapter": "chapter_0002",
+      "behavior": "Tensions rise as they deal with the complexities surrounding Whitmore's death, including broken windows and the potential involvement of a private detective called in by the victim's family"
+    },
+    {
+      "chapter": "chapter_0002",
+      "behavior": "Tensions rise as they deal with the complexities surrounding Whitmore's death, including broken windows and the potential involvement of a private detective called in by the victim's family"
+    },
+    {
+      "chapter": "chapter_0002",
+      "behavior": "Tensions rise as they deal with the complexities surrounding Whitmore's death, including broken windows and the potential involvement of a private detective called in by the victim's family"
     }
   ],
   "relationships": {},
   "open_questions": [],
-  "last_updated": "chapter_01"
+  "last_updated": "chapter_0004"
 }

@@ -1,0 +1,42 @@
+{
+  "name": "Sirius",
+  "first_appearance": "chapter_0003",
+  "core_traits": [],
+  "established_facts": [
+    "Suddenly, Jamie is startled by a young man named Sirius Wolfe, who appears to be another investigator",
+    "As Jamie contemplates the contrast between his life and the Whitmores', he meets a detective named Sirius Wolfe, who is there to investigate a crime scene in Edmund's messy study",
+    "Tension arises between Sirius and Jakob, a police officer who is eager to impress but struggles with his authority",
+    "Tension arises between Sirius and Jakob, a police officer who is eager to impress but struggles with his authority"
+  ],
+  "observed_behaviors": [
+    {
+      "chapter": "chapter_0003",
+      "behavior": "Sirius quickly deduces crucial details about the case, revealing his sharp analytical skills"
+    },
+    {
+      "chapter": "chapter_0003",
+      "behavior": "In a twist, Sirius introduces himself as the private detective assigned to the case, leaving Jamie surprised and somewhat incredulous"
+    },
+    {
+      "chapter": "chapter_0004",
+      "behavior": "Jamie aids Sirius by suggesting the police should step out to allow him to conduct his investigation"
+    },
+    {
+      "chapter": "chapter_0003",
+      "behavior": "Sirius quickly deduces crucial details about the case, revealing his sharp analytical skills"
+    },
+    {
+      "chapter": "chapter_0003",
+      "behavior": "Sirius quickly deduces crucial details about the case, revealing his sharp analytical skills"
+    },
+    {
+      "chapter": "chapter_0003",
+      "behavior": "Sirius quickly deduces crucial details about the case, revealing his sharp analytical skills"
+    }
+  ],
+  "relationships": {},
+  "open_questions": [
+    "The chapter concludes with Sirius focusing intently on the crime scene, and Jamie feeling a sense of excitement as he becomes involved in the unfolding mystery."
+  ],
+  "last_updated": "chapter_0004"
+}

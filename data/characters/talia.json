@@ -7,9 +7,13 @@
     {
       "chapter": "chapter_01",
       "behavior": "Appears in chapter summary"
+    },
+    {
+      "chapter": "chapter_0001",
+      "behavior": "As she paints, she captures the essence of her family and acquaintances: her lively siblings, Laurie’s grounding presence, Sebastian’s muted resignation, Lucius’s haunting grief, Talia’s vibrant life force, and Marlene’s comforting calmness"
     }
   ],
   "relationships": {},
   "open_questions": [],
-  "last_updated": "chapter_01"
+  "last_updated": "chapter_0001"
 }
