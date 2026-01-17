@@ -1,131 +1,164 @@
-# Narrative Memory & Critique Engine
+Narrative Memory, Critique & Editorial Engine
+Overview
 
-## Overview
+This project is a Narrative Memory, Critique & Editorial Engine designed to support long-form fiction writing (e.g., novels of 100k+ words). It addresses a core limitation of chat-based AI tools: the inability to persist narrative memory, maintain long-term consistency, and provide grounded editorial judgment across many chapters and writing sessions.
 
-This project is a **Narrative Memory & Critique Engine** designed to support long-form fiction writing (e.g., novels of ~100k words). It addresses a core limitation of chat-based AI tools: the inability to reliably **remember**, **reason over**, and **remain consistent with** a long narrative across many chapters.
+Rather than acting as an autonomous writer, the system functions as a persistent reader, analyst, and editor. It helps an author maintain narrative coherence, character integrity, tonal consistency, and stylistic quality over extended writing timelines.
 
-Rather than acting as an autonomous writer, this system functions as a **persistent reader, analyst, and consistency checker**. Its purpose is to help an author maintain narrative coherence, character integrity, and logical continuity over extended writing timelines.
+The system is built for serious personal writing, retrieval-augmented AI experimentation, and as a demonstration of careful, explainable LLM system design suitable for academic or portfolio presentation.
 
-The system is built for **long-term personal use**, experimentation with retrieval-augmented AI systems, and as a demonstration of careful system design with large language models.
+Core Design Philosophy
 
----
+The project is guided by explicit, non-negotiable principles:
 
-## Design Philosophy
+Memory Over Intelligence
+Long-term correctness comes from structured, persistent memory—not from relying on a “smarter” model.
 
-The project is guided by a small set of explicit principles:
+Files Own Canon
+All narrative state lives in files. The AI never owns, mutates, or silently rewrites canon.
 
-- **Memory > Intelligence**  
-  Long-term correctness is achieved through structured, persistent memory—not by relying on a “smarter” model.
+AI as Editor, Not Authority
+The system provides critique, judgment, and suggestions. Final decisions always remain with the author.
 
-- **Files Own Memory**  
-  All narrative state lives in files. The AI never stores canon, mutates state, or owns memory.
+Explainability Over Automation
+Every judgment is grounded in inspectable sources. Ambiguity is preserved, not resolved by guessing.
 
-- **AI as Analyst, Not Authority**  
-  The AI provides judgment and critique only. Final decisions always remain with the user.
+Incremental, Usage-Driven Growth
+Features are added only when real writing demands them—no speculative overengineering.
 
-- **Explainability Over Automation**  
-  Every stored fact, omission, or ambiguity should be inspectable and understandable.
+How the System Works
 
-- **Incremental Growth, No Overengineering**  
-  Features are added only when real writing usage demands them.
+Persistent Chapter Storage
+Chapters are stored as plain text files and persist across sessions.
 
----
+Summary-Based Memory Compression
+Each chapter can be summarized using an LLM, producing a compressed, durable representation of past narrative content.
 
-## How the System Works
+Focused Context Retrieval
+When reviewing a chapter, the system retrieves only relevant summaries and character memory—mirroring how a human editor recalls specific prior events instead of rereading the entire manuscript.
 
-1. **Persistent Chapter Storage**  
-   Chapters are stored as plain text files and persist across sessions.
+Structured Narrative Memory
+Characters, aliases, unresolved references, and ambiguous facts are stored explicitly using JSON files.
 
-2. **Summary-Based Memory Compression**  
-   Each chapter can be summarized using an LLM, producing a lightweight representation of past content.
+Human-Grade Editorial Evaluation
+Chapters are evaluated across multiple craft dimensions (prose, pacing, character consistency, emotional depth, etc.), followed by a strengths-first editorial critique written in a controlled human voice.
 
-3. **Focused Context Retrieval**  
-   When reviewing a new chapter, the system determines which past summaries are relevant and uses only that focused context—mirroring how a human editor recalls specific earlier events rather than rereading the entire manuscript.
+Opt-In Line Editing
+Grammar and clarity edits are performed only when explicitly requested, preserve authorial voice, and present before/after comparisons with explanations.
 
-4. **Context-Aware Critique**  
-   New chapters are critiqued for consistency, logic, character behavior, and narrative coherence using retrieved summaries.
+At no point does the AI act as a source of truth. All memory and canon are explicit, inspectable, and user-controlled.
 
-At no point does the AI act as a source of truth. All memory is explicit, file-based, and user-controlled.
+Development Phases
+Phase 1 — Foundation (Completed)
 
----
-
-## Development Phases
-
-### Phase 1 – Foundation (Completed)
-
-**Goal:** Prove that the system can persist narrative memory and critique new chapters using relevant past context.
+Goal: Prove that persistent narrative memory and context-aware critique are possible without relying on chat history.
 
 Key features:
-- Persistent file-based chapter storage
-- LLM-generated chapter summaries as compressed memory
-- Relevance-based retrieval of past summaries
-- Context-aware critique of new chapters
-- Clear separation between memory (files) and judgment (AI)
 
-Phase-1 established that long-term narrative support is possible without relying on chat history or opaque model memory.
+File-based chapter storage
 
----
+LLM-generated chapter summaries as compressed memory
 
-### Phase 2 – Accuracy & Structure (Completed)
+Relevance-based retrieval of past summaries
 
-**Goal:** Improve trust, accuracy, and explainability over long-term use.
+Context-aware chapter critique
 
-Key additions:
-- Structured character memory stored as JSON files
-- Canonical character identities with manual alias support
-- Candidate character staging for single-mention names
-- Conservative pronoun resolution using recency bias
-- Explicit handling of ambiguous but critical facts
-- Unresolved reference tracking for titles and role-based mentions (e.g., “Mr. Whitmore”, “my master”)
-- Strict append-only memory model (no silent rewrites or deletions)
+Clear separation between memory (files) and judgment (AI)
 
-Phase-2 ensures that the system **preserves uncertainty rather than guessing**, preventing long-term corruption of narrative memory.
+Phase 2 — Accuracy & Structure (Completed)
 
----
+Goal: Ensure long-term correctness, trust, and explainability.
 
-### Phase 3 – Scale & Experience (Planned)
+Key features:
 
-Future work will be driven by real writing needs and may include:
-- Timeline annotation and contradiction alerts (advisory only)
-- Promotion workflows for candidate characters
-- Resolution of ambiguous facts with human or AI verification
-- Explainable critique citations
-- Workflow automation and usability improvements
+Structured per-character memory (JSON)
 
-None of these are required for the system to be useful today.
+Alias and naming awareness
 
----
+Candidate character staging for single-mention names
 
-## What the System Explicitly Does *Not* Do
+Conservative pronoun resolution
 
-By design, the system does **not**:
-- Automatically write prose
-- Enforce a hard timeline
-- Auto-resolve aliases, titles, or honorifics
-- Rewrite or delete past memory
-- Use embeddings or vector databases
-- Rely on hidden model state or chat history
+Explicit storage of ambiguous but critical facts
 
-These constraints are intentional and preserve long-term correctness.
+Unresolved reference tracking (titles, honorifics, role-based mentions)
 
----
+Append-only memory model (no silent mutation)
 
-## Intended Use
+This phase ensures uncertainty is preserved rather than hallucinated.
+
+Phase 3 — Editorial Judgment & Craft Evaluation (Completed)
+
+Goal: Enable human-grade editorial judgment comparable to a serious fiction editor.
+
+Implemented features:
+
+Multi-criteria chapter scoring with justification
+
+Structured editorial critique with:
+
+strengths-first analysis
+
+weaknesses and missed opportunities
+
+concrete revision examples
+
+Configurable editorial tone (e.g., sharp friend, senior editor, professor)
+
+Interactive editorial Q&A mode for targeted questions
+
+Opt-in grammar and line-level editing with before/after explanations
+
+Replayable mock mode for demos and cost-controlled reuse
+
+Strict grounding in stored memory (no invented critique)
+
+Phase 3 transforms the system from a consistency checker into a true editorial engine.
+
+What the System Explicitly Does Not Do
+
+By design, the system does not:
+
+Automatically write prose
+
+Enforce a hard timeline
+
+Auto-resolve ambiguity or canon
+
+Rewrite or delete narrative memory
+
+Rely on embeddings or vector databases
+
+Depend on hidden model state or chat history
+
+These constraints preserve long-term narrative correctness.
+
+Intended Use
 
 This repository is intended for:
-- Personal long-form fiction writing support
-- Experimentation with retrieval-augmented AI systems
-- Learning and demonstrating careful system design with LLMs
-- Portfolio or academic reference (e.g., MS applications)
 
-It emphasizes **deliberate design decisions** over novelty or automation.
+Long-form fiction writers seeking sustained editorial support
 
----
+Retrieval-augmented AI experimentation
 
-## Current Status
+Learning careful, explainable LLM system design
 
-- Phase 1 (Foundation): **Complete**
-- Phase 2 (Accuracy & Structure): **Complete**
-- Phase 3 (Scale & Experience): **Planned**
+Portfolio or academic evaluation (e.g., MS applications)
+
+The emphasis is on design discipline, correctness, and explainability, not automation spectacle.
+
+Current Status
+
+Phase 1 — Foundation: Complete
+
+Phase 2 — Accuracy & Structure: Complete
+
+Phase 3 — Editorial Judgment & Craft Evaluation: Complete
+
+Phase 4 — Workflow & Usability: Planned
 
 The system is stable, usable, and actively supporting real writing.
+
+One-Sentence Summary
+
+This project is a file-backed, explainable editorial engine that persistently remembers long-form fiction and provides human-grade critique, evaluation, and line editing without ever owning or mutating narrative canon.
