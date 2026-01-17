@@ -1,0 +1,15 @@
+{
+  "name": "Marlene",
+  "first_appearance": "chapter_01",
+  "core_traits": [],
+  "established_facts": [],
+  "observed_behaviors": [
+    {
+      "chapter": "chapter_01",
+      "behavior": "Appears in chapter summary"
+    }
+  ],
+  "relationships": {},
+  "open_questions": [],
+  "last_updated": "chapter_01"
+}
