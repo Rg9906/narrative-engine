@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="panel">
+    <h2>Add Chapter</h2>
+
+    {% if error %}
+        <div class="badge">{{ error }}</div>
+    {% endif %}
+
+    <form method="post" action="/add">
+        <input
+            name="chapter_id"
+            placeholder="Chapter ID (e.g. 0004)"
+            required
+        />
+        <textarea
+            name="chapter_text"
+            rows="10"
+            placeholder="Paste chapter text here..."
+            required
+        ></textarea>
+        <button type="submit">Save Chapter</button>
+    </form>
+</div>
+
+<div class="panel">
+    <h2>Chapters</h2>
+
+    <ul class="chapter-list">
+        {% for chapter in chapters %}
+        <li>
+            <a href="/chapter/{{ chapter }}">Chapter {{ chapter }}</a>
+        </li>
+        {% else %}
+        <li>No chapters found.</li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}

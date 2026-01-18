@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+:root {
+    --bg: #0e0f13;
+    --panel: #161821;
+    --text: #e6e6eb;
+    --muted: #9aa0b4;
+    --accent: #7c9cff;
+    --border: #242635;
+    --good: #3fb950;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 32px;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+h2 {
+    font-size: 22px;
+    margin-top: 0;
+}
+
+h3 {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-bottom: 8px;
+}
+
+.panel {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    background: linear-gradient(135deg, #7c9cff, #5f7cff);
+    border: none;
+    color: #0e0f13;
+    font-weight: 600;
+    padding: 12px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.chapter-list li {
+    list-style: none;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+pre {
+    white-space: pre-wrap;
+    line-height: 1.7;
+    font-family: "Inter", sans-serif;
+}
+
+.score-block {
+    margin-bottom: 18px;
+}
+
+.score-title {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.score-value {
+    color: var(--good);
+}
+
+.badge {
+    display: inline-block;
+    background: #1f2333;
+    border: 1px solid var(--border);
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    color: var(--muted);
+}

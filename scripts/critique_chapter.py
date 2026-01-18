@@ -1,15 +1,23 @@
 import os
+import sys
 from openai import OpenAI
 
-# Directories
-CHAPTERS_DIR = "../data/chapters"
-SUMMARIES_DIR = "../data/summaries"
+# =================================================
+# PATH SETUP (PIPELINE-SAFE)
+# =================================================
+
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+CHAPTERS_DIR = os.path.join(BASE_DIR, "data", "chapters")
+SUMMARIES_DIR = os.path.join(BASE_DIR, "data", "summaries")
+EVALUATIONS_DIR = os.path.join(BASE_DIR, "data", "evaluations")
 
 client = OpenAI()
 
+# =================================================
+# LOADERS
+# =================================================
 
 def load_chapter(chapter_number):
-    """Load the full text of a chapter."""
     path = os.path.join(CHAPTERS_DIR, f"chapter_{chapter_number}.txt")
 
     if not os.path.exists(path):
@@ -21,7 +29,6 @@ def load_chapter(chapter_number):
 
 
 def load_all_summaries():
-    """Load all stored chapter summaries."""
     if not os.path.exists(SUMMARIES_DIR):
         return []
 
@@ -34,12 +41,11 @@ def load_all_summaries():
 
     return summaries
 
+# =================================================
+# AI HELPERS
+# =================================================
 
 def select_relevant_summaries(chapter_text, all_summaries):
-    """
-    Ask the AI which past summaries are relevant
-    for checking consistency with the new chapter.
-    """
     prompt = (
         "Given the following new chapter and past chapter summaries, "
         "list which summaries are most relevant to check for consistency. "
@@ -62,7 +68,6 @@ def select_relevant_summaries(chapter_text, all_summaries):
 
 
 def critique(chapter_text, relevant_summaries):
-    """Generate a critique using only relevant past context."""
     context = "\n\n".join(relevant_summaries)
 
     response = client.chat.completions.create(
@@ -95,16 +100,24 @@ def critique(chapter_text, relevant_summaries):
 
     return response.choices[0].message.content.strip()
 
+# =================================================
+# MAIN
+# =================================================
 
 def main():
     print("=== Critique Chapter ===")
-    chapter_number = input("Enter chapter number to critique: ").strip()
+
+    if len(sys.argv) > 1:
+        chapter_number = sys.argv[1].replace("chapter_", "").replace(".txt", "")
+    else:
+        chapter_number = input("Enter chapter number to critique: ").strip()
 
     chapter_text = load_chapter(chapter_number)
     if chapter_text is None:
         return
 
     all_summaries = load_all_summaries()
+
     if not all_summaries:
         print("⚠️ No summaries found. Critique may be shallow.")
         relevant_summaries = []
@@ -122,6 +135,20 @@ def main():
 
     print("=== CRITIQUE ===\n")
     print(result)
+
+    # ---------- PERSIST CRITIQUE FOR UI ----------
+
+    os.makedirs(EVALUATIONS_DIR, exist_ok=True)
+
+    out_path = os.path.join(
+        EVALUATIONS_DIR,
+        f"chapter_{chapter_number}_critique.txt"
+    )
+
+    with open(out_path, "w", encoding="utf-8") as f:
+        f.write(result)
+
+    print(f"[OK] Critique saved to {out_path}")
 
 
 if __name__ == "__main__":

@@ -1,7 +1,7 @@
 from pathlib import Path
 import json
 import sys
-from openai import OpenAI
+from openai import OpenAI, RateLimitError
 
 # ---------------------------------
 # CONFIG
@@ -26,10 +26,9 @@ DIMENSIONS = [
     "thematic_coherence"
 ]
 
-MODEL = "gpt-4.1-mini"  # change if needed
+MODEL = "gpt-4.1-mini"
 
-client = OpenAI()  # uses OPENAI_API_KEY from env
-
+client = OpenAI()
 
 # ---------------------------------
 # LOADERS
@@ -130,11 +129,7 @@ def run_editorial_scoring(prompt):
     )
 
     content = response.choices[0].message.content
-
-    try:
-        return json.loads(content)
-    except json.JSONDecodeError:
-        raise ValueError("Model returned invalid JSON:\n" + content)
+    return json.loads(content)
 
 
 # ---------------------------------
@@ -147,21 +142,33 @@ def main():
         sys.exit(1)
 
     chapter_name = sys.argv[1]
+    out_name = chapter_name.replace(".txt", "_scores.json")
+    out_path = EVAL_DIR / out_name
 
     chapter_text = load_chapter(chapter_name)
     summaries = load_summaries()
     characters = load_characters()
 
     prompt = build_prompt(chapter_text, summaries, characters)
-    report = run_editorial_scoring(prompt)
 
-    out_name = chapter_name.replace(".txt", "_scores.json")
-    out_path = EVAL_DIR / out_name
+    try:
+        report = run_editorial_scoring(prompt)
 
-    with open(out_path, "w", encoding="utf-8") as f:
-        json.dump(report, f, indent=2)
+        with open(out_path, "w", encoding="utf-8") as f:
+            json.dump(report, f, indent=2)
 
-    print(f"[OK] Editorial evaluation saved to {out_path}")
+        print(f"[OK] Editorial evaluation saved to {out_path}")
+
+    except RateLimitError:
+        print("⚠️ OpenAI rate limit hit during scoring.")
+
+        if out_path.exists():
+            print(f"[✓] Existing score reused: {out_path}")
+        else:
+            print("[!] No existing score available. Scoring skipped.")
+
+    except Exception as e:
+        print("❌ Scoring failed:", str(e))
 
 
 if __name__ == "__main__":

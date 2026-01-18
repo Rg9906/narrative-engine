@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="panel">
+    <h2>Chapter {{ chapter_id }}</h2>
+
+    <form id="run-form">
+        <select name="mode" id="mode">
+            <option value="friendly">Friendly</option>
+            <option value="strict" selected>Strict</option>
+            <option value="forensic">Forensic</option>
+        </select>
+        <button type="submit">Run Editorial Review</button>
+    </form>
+</div>
+
+<!-- LOADING PANEL -->
+<div id="loading-panel" class="panel hidden">
+    <h3>✍️ Editorial Review in Progress</h3>
+    <p id="status-message">Your editor is clearing his desk…</p>
+</div>
+
+{% if chapter %}
+<div class="panel">
+    <h3>Chapter Text</h3>
+    <pre>{{ chapter }}</pre>
+</div>
+{% endif %}
+
+{% if summary %}
+<div class="panel">
+    <h3>Summary</h3>
+    <pre>{{ summary }}</pre>
+</div>
+{% endif %}
+
+{% if critique %}
+<div class="panel">
+    <h3>Editorial Critique</h3>
+    <pre>{{ critique }}</pre>
+</div>
+{% endif %}
+
+{% if score %}
+<div class="panel">
+    <h3>Editorial Evaluation</h3>
+
+    {% for dimension, details in score.items() %}
+        <div class="score-block">
+            <div class="score-title">
+                <span>{{ dimension.replace("_", " ").title() }}</span>
+
+                {% if details.score is not none %}
+                    <span class="score-value">{{ details.score }}/100</span>
+                {% else %}
+                    <span class="badge">Not Yet Judgable</span>
+                {% endif %}
+            </div>
+
+            {% for line in details.justification %}
+                <div class="badge">{{ line }}</div>
+            {% endfor %}
+
+            {% if details.notes %}
+                <div class="badge">{{ details.notes }}</div>
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+<script>
+const form = document.getElementById("run-form");
+const loadingPanel = document.getElementById("loading-panel");
+const statusMessage = document.getElementById("status-message");
+
+form.addEventListener("submit", function (e) {
+    e.preventDefault(); // 🔥 THIS IS THE FIX
+
+    loadingPanel.classList.remove("hidden");
+
+    const mode = document.getElementById("mode").value;
+
+    fetch("/run/{{ chapter_id }}", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: new URLSearchParams({ mode })
+    });
+
+    pollStatus();
+});
+
+function pollStatus() {
+    fetch("/status/{{ chapter_id }}")
+        .then(res => res.json())
+        .then(data => {
+            if (data.message) {
+                statusMessage.textContent = data.message;
+            }
+
+            if (data.state === "complete") {
+                location.reload();
+            } else if (data.state === "error") {
+                statusMessage.textContent = "Something went wrong. Check logs.";
+            } else {
+                setTimeout(pollStatus, 1000);
+            }
+        })
+        .catch(() => {
+            setTimeout(pollStatus, 1500);
+        });
+}
+</script>
+
+{% endblock %}
