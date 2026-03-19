@@ -4,7 +4,8 @@
   "core_traits": [],
   "established_facts": [
     "The manor's luxurious details and chaotic atmosphere reflect the complexities of its inhabitants, including Edmund Whitmore, his wife, their son who is a well-regarded doctor, and their extended family",
-    "As Jamie contemplates the contrast between his life and the Whitmores', he meets a detective named Sirius Wolfe, who is there to investigate a crime scene in Edmund's messy study"
+    "As Jamie contemplates the contrast between his life and the Whitmores', he meets a detective named Sirius Wolfe, who is there to investigate a crime scene in Edmund's messy study",
+    "Tensions rise as they deal with the complexities surrounding Whitmore's death, including broken windows and the potential involvement of a private detective called in by the victim's family"
   ],
   "observed_behaviors": [
     {
@@ -38,9 +39,19 @@
     {
       "chapter": "chapter_0002",
       "behavior": "Tensions rise as they deal with the complexities surrounding Whitmore's death, including broken windows and the potential involvement of a private detective called in by the victim's family"
+    },
+    {
+      "chapter": "chapter_0002",
+      "behavior": "In Chapter 0002, Jamie, a detective constable, reflects on his routine as he spreads peanut butter, contemplating the suicide of Whitmore, a colleague",
+      "type": "pronoun_reference"
+    },
+    {
+      "chapter": "chapter_0002",
+      "behavior": "The Bull questions Jamie and his partner Dom about the absence of Sergeant Rhodes, who has not reported in for several hours amidst the ongoing investigation",
+      "type": "pronoun_reference"
     }
   ],
   "relationships": {},
   "open_questions": [],
-  "last_updated": "chapter_0004"
+  "last_updated": "chapter_0002"
 }

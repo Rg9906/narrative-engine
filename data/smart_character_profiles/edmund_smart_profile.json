@@ -1,0 +1,21 @@
+{
+  "name": "Edmund",
+  "core_identity": [],
+  "personality_traits": [],
+  "physical_attributes": [],
+  "relationships": {
+    "Whitmore": "[combined] ding Whitmore, his wife, their son who is a"
+  },
+  "motivations": [
+    "[combined] Wolfe, who is there to investigate a crime scene in 's"
+  ],
+  "conflicts": [],
+  "skills_abilities": [
+    "[combined] is a well-regarded doctor, and their extended"
+  ],
+  "narrative_role": "",
+  "character_arc": [],
+  "significant_moments": [],
+  "analysis_method": "smart_semantic_filtering",
+  "total_traits": 3
+}
