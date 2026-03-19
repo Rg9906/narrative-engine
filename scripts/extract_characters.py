@@ -2,6 +2,7 @@ import os
 import json
 import sys
 import re
+from character_memory_manager import extract_characters_with_improved_method
 
 # =================================================
 # PATH CONFIG
@@ -176,6 +177,13 @@ def main():
         sys.exit(1)
 
     summary_file = sys.argv[1]
+    
+    # Use the improved character memory manager
+    print("🔍 Using improved character extraction with context awareness...")
+    extract_characters_with_improved_method(summary_file)
+    
+    # Also run the original extraction for comparison (optional)
+    print("\n📊 Running original extraction for comparison...")
     chapter_id = summary_file.replace("_summary.txt", "")
 
     os.makedirs(CHARACTERS_DIR, exist_ok=True)
