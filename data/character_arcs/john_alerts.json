@@ -1,0 +1,23 @@
+{
+  "character": "John",
+  "analysis_date": "2026-03-19T17:35:25.801984",
+  "alerts": [
+    {
+      "character": "John",
+      "chapter": "chapter_0005",
+      "action": "was joking and laughing with his friends at the bar again",
+      "current_phase": "grieving",
+      "expected_behavior": "Should be somber given grieving phase",
+      "actual_behavior": "joyful",
+      "severity": "major",
+      "explanation": "Character in grieving phase should not be joyful",
+      "confidence": 0.7
+    }
+  ],
+  "total_alerts": 1,
+  "severity_summary": {
+    "major": 1,
+    "moderate": 0,
+    "minor": 0
+  }
+}

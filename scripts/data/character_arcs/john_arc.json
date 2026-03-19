@@ -1,0 +1,49 @@
+{
+  "character": "John",
+  "analysis_date": "2026-03-19T17:35:06.819624",
+  "phases": [
+    {
+      "phase_name": "grieving",
+      "chapter_start": "chapter_0002",
+      "description": "Phase change detected due to: ['died', 'accident', 'tragedy', 'new']",
+      "emotional_state": "sorrowful",
+      "motivations": [],
+      "behaviors": [],
+      "triggers": [
+        "died",
+        "accident",
+        "tragedy",
+        "new"
+      ],
+      "confidence": 0.7,
+      "chapter_end": "chapter_0003"
+    },
+    {
+      "phase_name": "grieving",
+      "chapter_start": "chapter_0003",
+      "description": "Phase change detected due to: ['death']",
+      "emotional_state": "sorrowful",
+      "motivations": [],
+      "behaviors": [],
+      "triggers": [
+        "death"
+      ],
+      "confidence": 0.7,
+      "chapter_end": "chapter_0004"
+    },
+    {
+      "phase_name": "grieving",
+      "chapter_start": "chapter_0004",
+      "description": "Phase change detected due to: ['death']",
+      "emotional_state": "sorrowful",
+      "motivations": [],
+      "behaviors": [],
+      "triggers": [
+        "death"
+      ],
+      "confidence": 0.7,
+      "chapter_end": null
+    }
+  ],
+  "total_phases": 3
+}
