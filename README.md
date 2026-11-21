@@ -1,3 +1,5 @@
+> **⚠️ Superseded.** This is the early prototype (Jan–Mar 2026, Next.js front end). The actively developed version is **[Narrative_Engine_Revised](https://github.com/Rg9906/Narrative_Engine_Revised)**. For the research side (Deferred Narrative State), see [NarrativeEngine-research](https://github.com/Rg9906/NarrativeEngine-research). This repository is kept for history.
+
 Narrative Memory, Critique & Editorial Engine
 Overview
 
